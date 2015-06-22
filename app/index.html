@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp" class="no-js">
+	<head>
+		<meta charset="utf-8">
+		<title>Portfolio Calculation</title>
+		  
+		<script src="bower_components/angular/angular.js"></script>
+		<script src="bower_components/angular-resource/angular-resource.js"></script>
+		<script src="bower_components/underscore/underscore-min.js"></script>
+		<script src="js/app.js"></script>
+		<script src="js/services.js"></script>
+		<script src="js/controllers.js"></script>
+	</head>
+	<body ng-controller="AppCtrl">
+		<div>
+			<h1>Portfolio Calculation</h1>
+		
+			<div>
+				<span>Choose a Portfolio: </span>
+				<select ng-model="selectedPortfolio" ng-change="changePortfolio()">
+					<option ng-repeat="p in portfolios" value="{{p.id}}">{{p.id}}</option>
+				</select>
+			</div>
+		
+			<div>
+				<span>Choose a Date: </span>
+				<input ng-model="selectedDate" /><button ng-click="calculate()">Calculate Portfolio Value</button>
+			</div>
+		
+			<div>
+				<p>Portfolio Value {{portfolioValue}}</p>
+				<u>
+					<li ng-repeat="t in portfolio.transactions">securityId: {{t.securityId}} type: {{t.type}} date: {{t.date}} amount: {{t.amount}}</li>
+				</u>
+			</div>
+
+		</div>
+	</body>
+</html>

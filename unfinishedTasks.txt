@@ -1,0 +1,6 @@
+The code that calculates the Portfolio value is duplicated in the node program and in the web app, 
+I didn't had time to do it correctly: load the data in the server part and then provide that data 
+and the method to calculate the Portfolio value to the client as a REST API.
+
+Regarding bonus task 1, the feature to display the year end values of the Portfolio was not implemented.
+Bonus task 2 was not started.
